@@ -19,17 +19,17 @@ feroxbuster -u http://<IP_OBJETIVO> -w /usr/share/wordlists/dirbuster/directory-
     
 - `-t`: Número de hilos concurrentes para optimizar la velocidad del escaneo.
 
-![](feroxbuster-banner.png)
+![](../assets/feroxbuster-banner.png)
 *Banner e inicio de la ejecución del escaneo en Feroxbuster.*
 
-![](feroxbuster-results.png)
+![](../assets/feroxbuster-results.png)
 *Identificación de rutas críticas y códigos de respuesta HTTP (200 OK, 301 Redirect) como `/phpMyAdmin/` y `/twiki/`.
 
 ## 3. Validación de Hallazgos
 
 Una vez completada la fase de enumeración, se realizó la verificación manual en el navegador para confirmar la accesibilidad y el estado de los recursos descubiertos.
 
-![](feroxbuster-phpmyadmin.png)
+![](../assets/feroxbuster-phpmyadmin.png)
 
 *Confirmación visual del panel de gestión `phpMyAdmin` expuesto.
 

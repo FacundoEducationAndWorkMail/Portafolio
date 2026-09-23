@@ -10,19 +10,19 @@ El propósito de este procedimiento es configurar un entorno controlado de inter
 ### 2.1. Enrutamiento del Tráfico de Red (FoxyProxy)
 Se configuró el complemento **FoxyProxy Standard** en el navegador Mozilla Firefox para canalizar de forma selectiva las solicitudes web hacia el socket local del proxy interceptor (`127.0.0.1:8080`).
 
-![Configuración de FoxyProxy](burp-foxyproxy-config.png)
+![](../assets/burp-foxyproxy-config.png)
 *Redirección del tráfico web cliente hacia el puerto local 8080.*
 
 ### 2.2. Establecimiento de Confianza SSL/TLS (Certificado Raíz)
 Para realizar el análisis de tráfico cifrado sin generar advertencias de seguridad ni interrupción de handshake TLS en el navegador, se exportó e importó la Entidad Certificadora raíz (`PortSwigger CA`) en la tienda de certificados del navegador.
 
-![Importación de Certificado CA](burp-ca-certificate.png)
+![](../assets/burp-ca-certificate.png)
 *Figura 2: Importación e instalación del certificado raíz de Burp Suite en Firefox.*
 
 ### 2.3. Verificación del Proxy Listener
 Se constató que el servicio Proxy de Burp Suite se encontrase activo y escuchando peticiones entrantes sobre la interfaz de bucle de retorno local.
 
-![Listener activo en Burp Suite](burp-proxy-listener.png)
+![](../assets/burp-proxy-listener.png)
 *Confirmación de escucha activa del servicio Proxy en 127.0.0.1:8080.*
 
 ---
@@ -32,13 +32,13 @@ Se constató que el servicio Proxy de Burp Suite se encontrase activo y escuchan
 ### Paso 1: Intercepción de la Petición de Autenticación
 Con el modo **Intercept ON** habilitado, se transmitió un intento de inicio de sesión en DVWA (`http://192.168.0.248/dvwa/login.php`). Burp Suite capturó la solicitud HTTP de tipo `POST`, exponiendo las credenciales transmitidas en texto plano dentro del cuerpo de la petición.
 
-![Petición POST interceptada](burp-intercept-login-post.png)
+![](../assets/burp-intercept-login-post.png)
 *Captura de la petición POST transmitida a /dvwa/login.php conteniendo parámetros de login en texto plano.*
 
 ### Paso 2: Definición de Posiciones y Carga de Payloads en Intruder
 La solicitud interceptada se envió al módulo **Intruder** (`Ctrl + I`). Se configuró el modo de ataque **Sniper**, marcando como posición dinámica única el parámetro `password` (`§123§`). Posteriormente, en la pestaña *Payloads*, se cargó el diccionario de contraseñas de prueba.
 
-![Configuración de Payloads en Intruder](burp-intruder-payloads.png)
+![](../assets/burp-intruder-payloads.png)
 *Delimitación del parámetro objetivo (§123§) y carga del listado de credenciales en Payload Configuration.*
 
 ### Paso 3: Ejecución del Ataque y Análisis de Respuestas HTTP
@@ -46,13 +46,13 @@ Al ejecutar el ataque, se monitorearon las respuestas emitidas por el servidor w
 * **Peticiones fallidas:** Devolvieron un código de estado `200 OK` o mantuvieron la respuesta estándar del formulario.
 * **Petición exitosa:** El payload válido (`password`) provocó una respuesta `HTTP 302 Found` acompañada del encabezado `Location: index.php`, demostrando la validación correcta de credenciales y la redirección hacia la sesión autenticada.
 
-![Ataque exitoso en Burp Intruder](burp-intruder-attack-success.png)
+![](../assets/burp-intruder-attack-success.png)
 *Resultados del ataque Sniper con identificación de la clave correcta mediante código 302 y redirección a index.php.*
 
 ### Paso 4: Verificación de la Sesión Concedida
 Tras desactivar la intercepción de tráfico en Burp Suite, se verificó en el navegador cliente la obtención del token de sesión y el acceso concedido con el rol de usuario `admin` en el panel principal de DVWA.
 
-![Sesión autenticada en DVWA](burp-login-success-dvwa.png)
+![](../assets/burp-login-success-dvwa.png)
 *Confirmación visual del acceso autenticado en el panel de DVWA tras la automatización exitosa.*
 
 ---

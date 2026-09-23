@@ -13,7 +13,7 @@ Durante la fase inicial de análisis se evaluó el comportamiento de servicios w
 ### Paso 1: Escenario de Prueba (Aplicación Web Objetivo)
 Se accedió a un formulario de autenticación expuesto sobre el protocolo HTTP no cifrado (`http://testphp.vulnweb.com/login.php`) y se rellenaron los inputs de credenciales (usuario y contraseña)
 
-![](wireshark-target-login.png)
+![](../assets/wireshark-target-login.png)
 *Interfaz web de inicio de sesión operando sin certificado SSL/TLS (Not Secure).*
 
 ### Paso 2: Intercepción de Tráfico y Captura de Credenciales
@@ -21,10 +21,10 @@ Se inició el sniffer de red filtrando la interfaz por el protocolo `http`. Tras
 
 Al desplegar la sección **HTML Form URL Encoded**, se constató la exposición directa de las credenciales introducidas.
 
-![Inspección de paquete HTTP POST en Wireshark mostrando credenciales](wireshark-credentials-capture.png)
+![](../assets/wireshark-credentials-capture.png)
 *Captura de tráfico en Wireshark revelando los campos de autenticación en texto plano.*
 
-![Zoom al payload de las credenciales expuestas](wireshark-credentials-zoom.png)
+![](../assets/wireshark-credentials-zoom.png)
 *Detalle del payload recibido (`uname: username` / `pass: pwsegura`).*
 
 ---

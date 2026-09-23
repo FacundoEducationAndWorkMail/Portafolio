@@ -12,7 +12,7 @@ Identificar la superficie de ataque del objetivo `192.168.0.240` mediante el des
 nmap -sV -T 5 --top-ports 100 --script vuln 192.168.0.240
 ```
 
-![](nmap-vuln-scan.png)
+![](../assets/nmap-vuln-scan.png)
 *Detección del servicio FTP (vsftpd 2.3.4) e identificación de vulnerabilidades críticas y exploits asociados (CVE-2011-2523 / Backdoor).
 
 
@@ -26,7 +26,7 @@ cd Desktop && mkdir Reporte-Escaneo && cd Reporte-Escaneo
 nmap -p 21-80 -sS -sV -vvv -T 5 -oX reporte.xml --stylesheet="[https://svn.nmap.org/nmap/docs/nmap.xsl](https://svn.nmap.org/nmap/docs/nmap.xsl)" 192.168.0.240
 ```
 
-![](nmap-command-xml.png)
+![](../assets/nmap-command-xml.png)
 *Ejecución del escaneo SYN sigiloso con nivel alto de verbosidad (-vvv) y generación del reporte estilizado.
 
 #### Desglose de Parámetros
@@ -51,7 +51,7 @@ nmap -p 21-80 -sS -sV -vvv -T 5 -oX reporte.xml --stylesheet="[https://svn.nmap.
 
 El archivo `reporte.xml` generado se abrió en el navegador web para verificar la renderización limpia de la tabla de puertos y servicios.
 
-![](nmap-xml-browser.png)
+![](../assets/nmap-xml-browser.png)
 *Interfaz visual del reporte interactivo mostrando los puertos abiertos (21, 22, 23, 25, 53, 80) y sus versiones.
 
 ## 4. Impacto y Mitigación

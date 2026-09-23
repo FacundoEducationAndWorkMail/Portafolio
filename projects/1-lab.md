@@ -13,4 +13,4 @@ Para el desarrollo de pruebas de concepto (PoCs) y análisis de vulnerabilidades
 ## 3. Configuración de Red Virtual y Verificación de Aislamiento
 Para garantizar que el tráfico malicioso no salga a la red doméstica ni a Internet, configuré una red de tipo **Host-Only**.
 
-* Verificación de conectividad local entre Kali Linux y Metasploitable2 (ping exitoso) y prueba de aislamiento frente a Internet (Network is unreachable al probar 8.8.8.8).*![](lab-network-ping.png)
+* Verificación de conectividad local entre Kali Linux y Metasploitable2 (ping exitoso) y prueba de aislamiento frente a Internet (Network is unreachable al probar 8.8.8.8).![](../assets/lab-network-ping.png)

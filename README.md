@@ -20,31 +20,31 @@ Mi objetivo es aplicar estas competencias en roles de entrada como **Soporte Té
 A continuación se detallan los laboratorios desarrollados, organizados paso a paso con sus respectivas metodologías y evidencias:
 
 ### 👤 Información Personal & Perfil
-* [**Sobre Mí e Información de Contacto**](profile.md) — Resumen profesional, habilidades y vías de contacto.
+* [**Sobre Mí e Información de Contacto**](about/profile.md) — Resumen profesional, habilidades y vías de contacto.
 
 ---
 
 ### 🧪 Proyectos y Laboratorios Técnicos
 
-1. [**Configuración de HomeLab Seguro**](1-lab.md)
+1. [**Configuración de HomeLab Seguro**](projects/1-lab.md)
    * **Descripción:** Diseño e implementación de un laboratorio de pruebas virtualizado (Kali Linux y objetivo Metasploitable2) utilizando redes *Host-Only* para garantizar aislamiento total y seguridad operacional.
 
-2. [**Scripting en Bash e Integridad de Datos**](2-bash-scripting.md)
+1. [**Scripting en Bash e Integridad de Datos**](projects/2-bash-scripting.md)
    * **Descripción:** Automatización de tareas de administración en Linux mediante Bash Scripts. Implementación de controles de integridad de archivos mediante hashing con algoritmo **SHA-256**.
 
-3. [**Prueba de Concepto: Análisis de Tráfico y Riesgos HTTP vs. HTTPS**](3-wireshark-poc.md)
+1. [**Prueba de Concepto: Análisis de Tráfico y Riesgos HTTP vs. HTTPS**](projects/3-wireshark-poc.md)
    * **Descripción:** Captura e inspección de paquetes con **Wireshark**. Demostración práctica del peligro de credenciales viajando en texto plano e importancia del cifrado SSL/TLS.
 
-4. [**Fuzzing y Enumeración Web con Feroxbuster**](4-feroxbuster.md)
+1. [**Fuzzing y Enumeración Web con Feroxbuster**](projects/4-feroxbuster.md)
    * **Descripción:** Descubrimiento activo de directorios y archivos ocultos en servidores web. Análisis de respuestas HTTP para identificación de superficies de ataque y políticas de control de acceso.
 
-5. [**Escaneo de Red y Reconocimiento con Nmap**](5-nmap-basics.md)
+1. [**Escaneo de Red y Reconocimiento con Nmap**](projects/5-nmap-basics.md)
    * **Descripción:** Auditoría de puertos abiertos, fingerprinting de sistemas operativos y detección de versiones de servicios para diagnóstico de red y evaluación de vulnerabilidades.
 
-6. [**Intercepción e Inspección Web con Burp Suite**](6-burp-suite.md)
+1. [**Intercepción e Inspección Web con Burp Suite**](projects/6-burp-suite.md)
    * **Descripción:** Configuración de proxy local y certificados CA para análisis de tráfico HTTP/HTTPS, inspección de peticiones/respuestas y evaluación de controles de seguridad (MFA, Rate Limiting).
 
-7. [**Prueba de Concepto: Explotación vsftpd Backdoor**](7-poc-vsftpd-backdoor.md)
+1. [**Prueba de Concepto: Explotación vsftpd Backdoor**](projects/7-poc-vsftpd-backdoor.md)
    * **Descripción:** Análisis y validación técnica de la vulnerabilidad crítica en `vsftpd v2.3.4` mediante Metasploit. Aplicación de medidas de remediación, hardening y actualización de servicios.
 
 ---
