@@ -47,7 +47,7 @@ A continuación se detallan los laboratorios desarrollados, organizados paso a p
 1. [**Prueba de Concepto: Explotación vsftpd Backdoor**](projects/7-poc-vsftpd-backdoor.md)
    * **Descripción:** Análisis y validación técnica de la vulnerabilidad crítica en `vsftpd v2.3.4` mediante Metasploit. Aplicación de medidas de remediación, hardening y actualización de servicios.
    
-1. [**Prueba de Concepto y Reporte: Análisis de Tráfico y Simulación de UDP Flood**](projects/8-UDPflood)
+1. [**Prueba de Concepto y Reporte: Análisis de Tráfico y Simulación de UDP Flood**](projects/8-UDPflood.md)
    * **Descripción:** Simulación de tráfico UDP no solicitado en un entorno virtualizado Host-Only para el análisis de comportamiento de la capa de transporte. Identificación de patrones de fragmentación IP en Wireshark y definición de medidas defensivas (Rate Limiting, Hardening e IDS/IPS).
 
 
